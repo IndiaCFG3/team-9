@@ -86,4 +86,5 @@ def sendmessage(request):
     msg = request.POST.get('message')
     message(subject,title,message)
     messageWhatsapp(subject,title,message)
+	
 
