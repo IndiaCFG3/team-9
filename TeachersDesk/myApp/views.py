@@ -4,6 +4,7 @@ from django.shortcuts import render, HttpResponse , redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from twilio.rest import Client
 
 def home(request):
 	print('inside home')
@@ -58,5 +59,31 @@ def handleLogout(request):
 
 	return HttpResponse('404 - ERROR FOUND')
 
-#def message(request):
+def messageWhatsapp(subject,title,msg):
+    account_sid = 'ACf8092d44602f315fd319e1a618b341c9'
+    auth_token = 'c87ba5203f4a78c4a612f8be98f3778d'
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                .create(
+                     body=msg,
+    from_='whatsapp:+14155238886',
+                     to='whatsapp:+919833040567',
+                 )
+
+def message(subject,title,msg):
+    account_sid = 'ACf8092d44602f315fd319e1a618b341c9'
+    auth_token = 'c87ba5203f4a78c4a612f8be98f3778d'
+    client = Client(account_sid, auth_token)
+    message = client.messages \
+                .create(
+                     body=msg,
+                    from_='+12512929449',
+            to='+919833040567'
+                 )
+def sendMessage(request):
+    subject = request.POST.get('subject')
+    title = request.POST.get('title')
+    msg = request.POST.get('message')
+    message(subject,title,message)
+    messageWhatsapp(subject,title,message)
 
