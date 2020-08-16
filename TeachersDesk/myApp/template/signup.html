@@ -1,0 +1,48 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <div class="jumbotron box">
+    <h2><b>Sign up</b></h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Name : </label>
+            <input type="name" class="form-control" id="name" name="name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+
+    
+        <p><b>Select the subjects you teach</b></p>
+        <div class="checkbox">
+            <label><input type="checkbox" id="english" name="english">English</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" id="Mathematics" name="Mathematics">Mathematics</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" id="Kannada" name="Kannada">Kannada</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" id="Social" name="Social">Social</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" id="Science" name="Science">Science</label>
+        </div>
+
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
+        <button type="submit" class="btn btn-success">Submit</button><br><br>
+        <p>Have an account? click here to <a href="login.html">login</a></p>
+    </form>
+    </div>
+</div>
