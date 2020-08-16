@@ -80,7 +80,7 @@ def message(subject,title,msg):
                     from_='+12512929449',
             to='+919833040567'
                  )
-def sendMessage(request):
+def sendmessage(request):
     subject = request.POST.get('subject')
     title = request.POST.get('title')
     msg = request.POST.get('message')
